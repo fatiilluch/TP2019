@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Pedir Sugerencia | Que me Pongo </title>
+    <link rel="stylesheet" href="suggestions/css/estilossuggestions.css">
+    <link rel="stylesheet" href="guardarropas/css/estilosGuardarropa.css">
+    <script type="text/javascript" src="suggestions/js/agregarSugerencia.js"></script>
+    <link rel="icon" type="image/svg" href="events/images/icon.svg" />
+</head>
+
+<body>
+<nav>
+    <div class="logo">QueMePongo?</div>
+    <div id="notificaciones"></div>
+</nav>
+
+<section>
+    <article>
+        <tbody>
+        <table border = "1" aling="center">
+
+            <tr><td rowspan="2">Parte Superior</td>
+                <td>{{sugerencia.primerAtuendoNoRechazado.parteSuperior1.tipoDePrenda.nombre}}</td><td>{{sugerencia.primerAtuendoNoRechazado.parteSuperior1.tipoTela}}</td>
+                <td><img class = "img" src={{sugerencia.primerAtuendoNoRechazado.parteSuperior1.imagenParaMostrar}} srcset={{sugerencia.primerAtuendoNoRechazado.parteSuperior1.tipoDePrenda.imagenPredeterminada}} style='background-color: {{sugerencia.primerAtuendo.parteSuperior1.colorPrincipal.colorIngles}}'/></td>
+                </tr>
+
+                <tr>
+                <td>{{sugerencia.primerAtuendoNoRechazado.parteSuperior2.tipoDePrenda.nombre}}</td><td>{{sugerencia.primerAtuendoNoRechazado.parteSuperior2.tipoTela}}</td>
+                <td><img class = "img" src={{sugerencia.primerAtuendoNoRechazado.parteSuperior2.imagenParaMostrar}} srcset={{sugerencia.primerAtuendoNoRechazado.parteSuperior2.tipoDePrenda.imagenPredeterminada}} style='background-color: {{sugerencia.primerAtuendo.parteSuperior2.colorPrincipal.colorIngles}}'/></td>
+
+                </tr>
+
+            <tr><td>Parte Inferior</td>
+                <td>{{sugerencia.primerAtuendoNoRechazado.parteInferior.tipoDePrenda.nombre}}</td><td>{{sugerencia.primerAtuendoNoRechazado.parteInferior.tipoTela}}</td>
+                <td><img class = "img" src={{sugerencia.primerAtuendoNoRechazado.parteInferior.imagenParaMostrar}} srcset={{sugerencia.primerAtuendoNoRechazado.parteInferior.tipoDePrenda.imagenPredeterminada}} style='background-color: {{sugerencia.primerAtuendo.parteInferior.colorPrincipal.colorIngles}}'/></td>
+
+            </tr>
+            <tr><td>Calzado</td>
+                <td>{{sugerencia.primerAtuendoNoRechazado.calzado.tipoDePrenda.nombre}}</td><td>{{sugerencia.primerAtuendoNoRechazado.calzado.tipoTela}}</td>
+                <td><img class = "img" src={{sugerencia.primerAtuendoNoRechazado.calzado.imagenParaMostrar}} srcset={{sugerencia.primerAtuendoNoRechazado.calzado.tipoDePrenda.imagenPredeterminada}} style='background-color: {{sugerencia.primerAtuendo.calzado.colorPrincipal.colorIngles}}'/></td>
+
+            </tr>
+        </table>
+        </tbody>
+
+    </article>
+    <div class="button-container">
+            <input type="hidden" id="idSugerencia" value={{sugerencia.id}}>
+            <div>
+                <button type="submit" id="buttom" onclick="rechazarSugerencia()">Rechazar</button>
+            </div>
+            <div>
+                <button type="submit" id="buttom" onclick="aceptarSugerencia()">Aceptar</button>
+            </div>
+    </div>
+</section>
+
+
+
+<footer>
+    <div class="opButton">
+        <div class="option"><a href="/sugerencias">Volver</a> </div>
+    </div>
+    <div class="opButton">
+        <div class="option"><a href="#" onclick="location.reload()">Ser Premium</a></div>
+    </div>
+</footer>
+
+<script>
+function aceptarSugerencia()
+{
+    var idAceptada = document.getElementById("idSugerencia").value;
+    alert("Se aceptará el atuendo");
+    location.href= "/modificarSugerenciaAceptada"+"?idaceptada="+idAceptada;
+}
+
+function rechazarSugerencia()
+{
+   var idRechazada = document.getElementById("idSugerencia").value;
+   location.href= "/modificarSugerenciaRechazada"+"?idrechazada="+idRechazada;
+}
+
+</script>
+</body>

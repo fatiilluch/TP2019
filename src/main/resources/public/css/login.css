@@ -1,0 +1,145 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: url(../img/fondoDDS.jpg) no-repeat center top;
+	background-size: cover; 
+	font-family: sans-serif;
+	height: 100vh;
+
+}
+
+.box{
+	width: 320px;
+	height: 420px;
+	background: #000;
+	color: #fff;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	opacity:0.8;
+}
+
+.box .logo{
+	width: 130px;
+	height: 130px;
+	border-radius: 25%;
+	position: absolute;
+	top: -75px;
+	left: calc(45% - 45px);
+}
+
+.box h1{
+	margin: 0;
+	padding: 0 0 40px;
+	text-align: center;
+	font-size: 22px;
+}
+
+.box h2{
+	margin: 0;
+	padding: 0 0 40px;
+	text-align: center;
+	font-size: 15px;
+	color: #E1132A;
+	text-align: left;
+	margin-bottom: -10%;
+}
+
+.box label{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: block;
+}
+
+.box input{
+	width: 100%;
+	margin-bottom: 22px;
+}
+
+.box input[type="text"],
+.box input[type="password"]{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40%;
+	color: #fff;
+	font-size: 16px;
+}
+
+.box input[type="submit"]{
+	border:none;
+	outline: none;
+	height: 40px;
+	background: #b80f22;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+	cursor:pointer;
+}
+
+a.button{
+	width: 60%;
+	height: 20px;
+	padding: 5% 20%;
+	border:none;
+	display: inline-block;
+	outline: none;
+	background: #b80f22;
+	color: #fff;
+	font-size: 20px;
+	border-radius: 20px;
+	cursor: pointer;
+	text-decoration:none;
+	margin-bottom: 15%;
+	text-align: center;
+}
+
+a.buttonSecundario{
+	font-size: 15px;
+}
+
+a.aceptar{
+	padding: 3% 5%;
+	position:absolute;
+	top:350px;
+	right: 25px;
+	background: #b80f22;
+	color: #fff;
+	font-size: 15px;
+	border-radius: 20px;
+	cursor: pointer;
+	text-decoration:none;
+}
+
+a.atras{
+	padding: 3% 5%;
+	position:absolute;
+	top:350px;
+	background: #b80f22;
+	color: #fff;
+	font-size: 15px;
+	border-radius: 20px;
+	cursor: pointer;
+	text-decoration:none;
+}
+
+select.select{
+     background: transparent;
+     border: none;
+     font-size: 14px;
+	 background: #B8B8BF;
+     height: 30px;
+     padding: 5px;
+     width: 250px;
+	 border-radius: 20px;
+	 outline: none;
+}
+
+.box input[type="submit"]:hover,a.aceptar:hover,a.atras:hover,a.button:hover{
+	background: #8C0D1C;
+}

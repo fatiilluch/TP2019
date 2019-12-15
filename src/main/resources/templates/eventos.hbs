@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos | QueMePongo</title>
+    <link rel="stylesheet" href="events/css/estilosEvents.css">
+    <link rel="icon" type="image/png" href="events/images/icons/favicon.ico" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo">QueMePongo?</div>
+        <div id="notificaciones"></div>
+    </nav>
+    <section id="mainEvent">
+        <div class="items" id="first">
+            <div>Agregar Evento Proximo</div>
+            <div class="options" method="POST" action="/agregarEventos">
+                <a href="agregarEventos.hbs"><img src="main/images/flecha3.svg"></a>
+            </div>
+        </div>
+        <div class="items">
+            <div>Cancelar Evento</div>
+            <div class="options">
+                <a href="eliminarEventos.hbs"><img src="main/images/flecha3.svg"></a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="opButton">
+            <div class="option"><a href="main.hbs">Volver</a> </div>
+        </div>
+        <div class="opButton">
+            <div class="option"><a href="#" onclick="location.reload()">Ser Premium</a></div>
+        </div>
+    </footer>
+</body>
+
+</html>

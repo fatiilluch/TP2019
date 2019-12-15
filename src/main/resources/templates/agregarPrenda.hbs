@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="guardarropas/js/guardarropaEnlaces.js"></script>
+<script type="text/javascript" src="https://developer.mozilla.org/en-US/docs/Web/API/URL"></script>
+<script type="text/javascript" src="https://developer.mozilla.org/en/docs/Web/API/URLSearchParams"></script>
+<head>
+    <meta charset="utf-8">
+    <title>Agregar Prenda | QueMePongo</title>
+    <link rel="stylesheet" href="events/css/estilosEvents.css">
+    <script type="text/javascript" src="events/js/agregarEventos.js"></script>
+    <link rel="icon" type="image/svg" href="events/images/icon.svg" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo">QueMePongo?</div>
+        <div id="notificaciones"></div>
+    </nav>
+    <section>
+        <article>
+            <form id="form" action="javascript:irAAgregarPrenda2()">
+                <div class="itemForm">
+                    <select class="item" name="tipoDePrenda" id="tipoDePrenda" onclick="getDatosTipoDePrenda()">
+                        <option  value="0">Seleccione el Tipo de Prenda</option>
+                        {{#each TipoDePrenda}}
+                            <option value={{id}}>{{nombre}}</option>
+                        {{/each}}
+                    </select>
+                    <span class="focus-input"></span>
+                </div>
+                <div class="itemForm">
+                    <select class="item" name="colorPrimario" id="color" onclick="changeBackgroundOutPut()">
+                        <option  value="0">Seleccione color primario</option>
+                        <option value="ROJO">Rojo</option>
+                        <option value="AZUL">Azul</option>
+                        <option value="AMARILLO">Amarillo</option>
+                        <option value="BLANCO">Blanco</option>
+                        <option value="NEGRO">Negro</option>
+                        <option value="ROSA">Rosa</option>
+                        <option value="VERDE">Verde</option>
+                        <option value="CELESTE">Celeste</option>
+                        <option value="GRIS">Gris</option>
+                        <option value="BORDO">Bordo</option>
+                    </select>
+                </div>
+
+                <div class="itemForm">
+                    <select class="item" name="colorSecundario" id="colorSecundario">
+                        <option  value="Nulo">Seleccione el color secundario</option>
+                        <option value="ROJO">Rojo</option>
+                        <option value="AZUL">Azul</option>
+                        <option value="AMARILLO">Amarillo</option>
+                        <option value="BLANCO">Blanco</option>
+                        <option value="NEGRO">Negro</option>
+                        <option value="ROSA">Rosa</option>
+                        <option value="VERDE">Verde</option>
+                        <option value="CELESTE">Celeste</option>
+                        <option value="GRIS">Gris</option>
+                        <option value="BORDO">Bordo</option>
+                        <option value="Nulo">N/A</option> <!--Nuevo color je-->
+                    </select>
+                </div>
+
+                <div class="itemForm">
+                    <button type="submit" id="buttom" class="item">Siguiente</button>
+                </div>
+            </form>
+        </article>
+    </section>
+    <footer>
+        <div class="opButton">
+            <div class="option"><a onclick="volverAGuardarropa()">Volver</a> </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

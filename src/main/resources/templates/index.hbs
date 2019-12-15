@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Calendario Web</title>
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="calendarioWeb/js/jquery.min.js"></script>
+	<script src="calendarioWeb/js/jquery-ui.min.js"></script>
+	<script src="calendarioWeb/js/moment.min.js"></script>
+	<link rel="stylesheet" href="calendarioWeb/css/fullcalendar.min.css">
+	<script src="calendarioWeb/js/fullcalendar.min.js"></script>
+	<script src="calendarioWeb/js/es.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+
+</head>
+<body>
+	<div class="conteiner">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-7"><div id="calendarioWeb"></div></div>
+			<div class="col"></div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){$('#calendarioWeb').fullCalendar({
+
+			header:{
+				left:'Miboton,prev,next,today',
+				center: 'title',
+				right: 'month'
+			},
+			customButtons:{
+				Miboton:{
+					text:"Volver",
+					click:function(){
+						location.href="/main"+location.search
+					}
+				}
+			},
+
+			dayClick:function(date,jsEvent,view){
+				$(this).css('background-color', 'red');
+				$('#txtFecha').val(date.format());
+				$('#modalAgregarEvento').modal();
+			},
+			eventSources:[{
+				events:[
+                    {
+                        title: 'Fiesta',
+                        start: '2017-12-06',
+                        protocolo: 'Informal',
+                        frecuencia: 'UNICO'
+                    }
+                 {{#each eventos}}
+                    ,
+                    {
+                        title:'{{nombre}}',
+                        start: '{{fechaEvento}}',
+                        protocolo: '{{protocolo}}',
+                        frecuencia: '{{frecuencia}}'
+                    }
+                 {{/each}}
+				
+			],
+			color:"black",
+			textColor:"white"
+
+			}],
+
+			eventClick:function(calEvent, jsEvent, view){
+				$('#tituloEvento').html(calEvent.title); 
+				$('#protocolo').html(calEvent.protocolo);
+				$('#frecuencia').html(calEvent.frecuencia);
+
+				$('#tituloEvento').val(calEvent.title);
+				$('#protocolo').val(calEvent.protocolo);
+				$('#frecuencia').val(calEvent.frecuencia);
+			    $('#txtFecha').val(calEvent.start);
+
+				$('#modalVerSugerencia').modal();
+			}
+
+
+			});
+		});
+
+	</script>
+
+	<!-- Modal para agregar nuevo evento-->
+<div class="modal fade" id="modalAgregarEvento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Desea agregar evento?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<form id="form" method="POST" action=href>
+
+      		<div class="form-row">
+      			fecha: <input type="text" disabled= "disabled" class="form-control" id= "txtFecha" name="txtFecha"><br>
+      			nombre: <input type="text" id= "nombreEvento" class="form-control" name="nombreEvento"><br>
+      		</div>
+      		<div class="form-row">
+      		protocolo: <select class="item" class="form-control" name='protocolo' id="protocol"> <!--onclick="getImgProtocol()"> -->
+                    <option  value="0">Selecciona el Protocolo del evento</option>
+                    <option value="Formal">Formal</option>
+                    <option value="Informal">Informal</option>
+                    </select><br>
+            </div>
+            <div class="form-row">
+      		frecuencia: <select class="item" class="form-control" name='frecuencia' id="frecuen"> <!--onclick="getImgProtocol()"> -->
+                    <option  value="0">Selecciona la frecuencia</option>
+                    <option value="UNICO">Unico</option>
+                    <option value="DIARIO">Diario</option>
+                    <option value="SEMANAL">Semanal</option>
+                    <option value="MENSUAL">Mensual</option>
+                    <option value="ANUAL">Anual</option>
+                    </select><br>
+            </div>
+
+      	</form>
+      </div>
+      <div class="modal-footer">
+      	<button type="button" id="btnAgregar" class="btn btn-success" >Agregar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal para ver sugerencia-->
+<div class="modal fade" id="modalVerSugerencia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tituloEvento" value="PEPITON"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="protocolo"></div>
+        <div id="frecuencia"></div>
+      </div>
+      <div class="modal-footer">
+        
+      	<button type="button" id="btnVerSugerencia"class="btn btn-success" >Ver sugerencia</button>
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+	$('#btnAgregar').click(function(){
+		var nuevoEvento = {
+			title:$('#nombreEvento').val(),
+			start:$('#txtFecha').val(),
+			protocolo:$('#protocol').val(),
+			frecuencia:$('#frecuen').val()
+
+
+		};
+
+        var nombre = document.getElementById("nombreEvento").value
+        var protocolo = document.getElementById("protocol").value
+        var frecuencia = document.getElementById("frecuen").value
+        var fecha = document.getElementById("txtFecha").value
+
+        if(nombre == "" && protocolo == 0 && frecuencia == 0){alert("Por favor, ingrese los parametros");location.reload}
+        else if (nombre == "" && protocolo == 0){alert("Por favor, ingrese un nombre y protocolo");location.reload}
+        else if (nombre == "" && frecuencia == 0){alert("Por favor, ingrese un nombre y frecuencia");location.reload}
+        else if (protocolo == 0 && frecuencia == 0){alert("Por favor, ingrese un protocolo y frecuencia");location.reload}
+        else if (nombre == ""){alert("Por favor, ingrese un nombre");location.reload}
+        else if (protocolo == 0){alert("Por favor, ingrese un protocolo");location.reload}
+        else if (frecuencia == 0){alert("Por favor, ingrese una frecuencia");location.reload}
+        else{
+            $('#calendarioWeb').fullCalendar('renderEvent', nuevoEvento);
+            $('#modalAgregarEvento').modal('toggle');
+             location.href="/agregarEvento"+"?nombre="+nombre+"&protocolo="+protocolo+"&frecuencia="+frecuencia+"&fecha="+fecha
+        }
+
+	});
+
+    $('#btnVerSugerencia').click(function(){
+        var nombre = document.getElementById("tituloEvento").value
+        var protocolo = document.getElementById("protocolo").value
+        var frecuencia = document.getElementById("frecuencia").value
+        var fecha = document.getElementById("txtFecha").value
+        var fechaLinda = Date.parse(fecha);
+        var diaHoy = (new Date).getTime();
+        if(diaHoy+(3*86400000) < fechaLinda ){
+         alert("Todavía no hay una sugerencia disponible para ese evento");
+        }
+         else{
+             location.href="/verSugerencia"+"?nombre="+nombre+"&fecha="+fechaLinda
+         }
+	});
+
+
+</script>
+</body>
+</html>

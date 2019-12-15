@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="guardarropas/js/guardarropaEnlaces.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<head>
+    <meta charset="utf-8">
+    <title>Agregar Prenda | QueMePongo</title>
+    <link rel="stylesheet" href="events/css/estilosEvents.css">
+    <script type="text/javascript" src="events/js/agregarEventos.js"></script>
+    <link rel="icon" type="image/svg" href="events/images/icon.svg" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo">QueMePongo?</div>
+        <div id="notificaciones"></div>
+    </nav>
+    <section>
+        <article>
+            <form id="form" method="POST" action=href>
+              
+                <div class="itemForm">
+                    <select class="item" name="telasAdmitidas" id="telasAdmitidas"> <!-- onclick="getDatosTipoDePrenda()"> -->
+                    <option  value="0">Seleccione el Tipo de Tela</option>
+                        {{#each telasAdmitidas}}
+                            <option value="{{this}}"> {{this}} </option>
+                        {{/each}}
+                    </select>
+                    <span class="focus-input"></span>
+                </div>
+                <div class="itemForm">
+                    <select class="item" name='protocolo' id="protocol"> <!--onclick="getImgProtocol()"> -->
+                    <option  value="0">Selecciona el Protocolo de Vestimenta</option>
+                    <option value="Formal">Formal</option>
+                    <option value="Informal">Informal</option>
+                    </select>
+                    <span class="focus-input"></span>
+                </div>
+            </form>
+        </article>
+    </section>
+    <footer>
+        <div class="opButton">
+            <div class="option"><a onclick="volverAAgregarPrenda1()">Volver</a> </div>
+        </div>
+        <div class="opButton" method="POST">
+            <button type="submit" class="option" onclick="agregarDefinitivamente()"><a >Agregar Prenda</a></button>
+        </div>
+    </footer>
+
+</body>
+
+</html>

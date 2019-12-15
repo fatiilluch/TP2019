@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Pedir Sugerencia | Que me Pongo </title>
+    <link rel="stylesheet" href="suggestions/css/estilossuggestions.css">
+    <link rel="stylesheet" href="guardarropas/css/estilosGuardarropa.css">
+    <script type="text/javascript" src="suggestions/js/agregarSugerencia.js"></script>
+    <link rel="icon" type="image/svg" href="events/images/icon.svg" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo">QueMePongo?</div>
+        <div id="notificaciones"></div>
+    </nav>
+
+        <section>
+            <article>
+                <tbody>
+                    <table border = "1" aling="center">
+                        <tr><td rowspan="2">Parte Superior</td>
+                            <td>{{atuendo.parteSuperior1.tipoDePrenda.nombre}}</td><td>{{atuendo.parteSuperior1.tipoTela}}</td>
+                            <td><img class = "img" src={{atuendo.parteSuperior1.imagenParaMostrar}} srcset={{atuendo.parteSuperior1.tipoDePrenda.imagenPredeterminada}} style='background-color: {{atuendo.parteSuperior1.colorPrincipal.colorIngles}}'/></td>
+                            
+                        </tr>
+                        <tr>
+                             <td>{{atuendo.parteSuperior2.tipoDePrenda.nombre}}</td><td>{{atuendo.parteSuperior2.tipoTela}}</td>
+                             <td><img class = "img" src={{atuendo.parteSuperior2.imagenParaMostrar}} srcset={{atuendo.parteSuperior2.tipoDePrenda.imagenPredeterminada}} style='background-color: {{atuendoparteSuperior2.colorPrincipal.colorIngles}}'/></td>
+                        </tr>
+
+                        <tr><td>Parte Inferior</td>
+                              <td>{{atuendo.parteInferior.tipoDePrenda.nombre}}</td><td>{{atuendo.parteInferior.tipoTela}}</td>
+                              <td><img class = "img" src={{atuendo.parteInferior.imagenParaMostrar}} srcset={{atuendo.parteInferior.tipoDePrenda.imagenPredeterminada}} style='background-color: {{atuendo.parteInferior.colorPrincipal.colorIngles}}'/></td>
+                               
+                        </tr>
+                        <tr><td>Calzado</td>
+                            <td>{{atuendo.calzado.tipoDePrenda.nombre}}</td><td>{{atuendo.calzado.tipoTela}}</td>
+                            <td><img class = "img" src={{atuendo.calzado.imagenParaMostrar}} srcset={{atuendo.calzado.tipoDePrenda.imagenPredeterminada}} style='background-color: {{atuendo.calzado.colorPrincipal.colorIngles}}'/></td>
+                            
+                        </tr>
+                    </table>
+                </tbody>
+
+            </article>
+            <div class="button-container">
+                <form action="/persistirSugerenciaRechazada">
+                    <input type="hidden" name="sup1" value={{atuendo.parteSuperior1.id}}>
+                    <input type="hidden" name="sup2" value={{atuendo.parteSuperior2.id}}>
+                    <input type="hidden" name="inf" value={{atuendo.parteInferior.id}}>
+                    <input type="hidden" name="cal" value={{atuendo.calzado.id}}>
+                    <div>
+                        <button type="submit" id="buttom">Rechazar</button>
+                    </div>
+                </form>
+
+                <form id="form1" action="persistirSugerenciaAceptada">
+                    <input type="hidden" name="sup1" value={{atuendo.parteSuperior1.id}}>
+                    <input type="hidden" name="sup2" value={{atuendo.parteSuperior2.id}}>
+                    <input type="hidden" name="inf" value={{atuendo.parteInferior.id}}>
+                    <input type="hidden" name="cal" value={{atuendo.calzado.id}}>
+                    <div>
+                        <button type="submit" id="buttom" onclick="alertaFeliz()">Aceptar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+
+    <footer>
+        <div class="opButton">
+            <div class="option"><a href="/sugerencias">Volver</a> </div>
+        </div>
+        <div class="opButton">
+            <div class="option"><a href="#" onclick="location.reload()">Ser Premium</a></div>
+        </div>
+    </footer>
+</body>
+
+</html>

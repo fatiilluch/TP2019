@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="guardarropas/js/guardarropaEnlaces.js"></script>
+
+<head>
+    <meta charset="utf-8">
+    <title>Guardarropas | QueMePongo</title>
+    <link rel="stylesheet" href="guardarropas/css/estilosGuardarropa.css">
+    <link rel="icon" type="image/png" href="guardarropas/images/icons/favicon.ico">
+
+</head>
+
+<body>
+    <nav>
+        <div class="logo">QueMePongo?</div>
+        <div id="notificaciones"></div>
+    </nav>
+    <section id="prenda">
+        <article>
+                
+                <div class="itemForm"><span>Prendas Disponibles : </span></div>
+                
+                    <tbody>
+                    <!--class = "tabla" border = "1" aling="center"-->
+                    <table border = "1" aling="center">
+                        
+                            <tr><th>Tipo de prenda</th><th>Tela</th><th>Color 1</th><th>Color 2</th><th>Img</th></tr>
+                        
+                        
+                           {{#each prendas}}
+                           <tr aling="center">
+                    
+                              <td value="{{id}}">{{tipoDePrenda.nombre}}</td>
+                        
+                              <td value="{{id}}">{{tipoTela}}</td>
+
+                                <td value="{{id}}">{{colorPrincipal.color}}</td> 
+
+                                <td value="{{id}}">{{colorSecundario.color}}</td>                              
+                              
+                              <td value="{{id}}"><img class = "img" src={{imagenParaMostrar}} srcset={{tipoDePrenda.imagenPredeterminada}} style='background-color: {{colorPrincipal.colorIngles}}'/></td>
+                            </tr>
+                           {{/each}}
+                        
+
+                    </table>
+                </tbody>
+                
+            <form action="javascript:irAAgregarPrenda()">
+                <div class="inputItems">
+                    <div class="itemForm">
+                        <button type="submit" id="buttom" class="item" onclick="javascript:irAAgregarPrenda()">Agregar Prenda</button>
+                    </div>
+                </div>
+            </form>
+        </article>
+    </section>
+    <footer>
+        <div class="opButton">
+            <div class="option"><a href="/guardarropa">Volver</a> </div>
+        </div>
+        <div class="opButton">
+            <div class="option"><a href="#" onclick="location.reload()">Ser Premium</a></div>
+        </div>
+    </footer>
+<!--<?php if{isset($_GET["guardarropa"})){$var = $_GET["dropdown"];echo $var;}?>-->
+
+
+</body>
+
+</html>

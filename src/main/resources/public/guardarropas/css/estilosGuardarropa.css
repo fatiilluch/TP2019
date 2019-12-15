@@ -1,0 +1,319 @@
+@font-face {
+    font-family: Montserrat-Black;
+    src: url('../../main/fonds/montserrat/Montserrat-Black.ttf');
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url('../../main/fonds/montserrat/Montserrat-Bold.ttf');
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    background: url('../../main/images/fondoDDS.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    line-height: 60px;
+    height: 14%;
+    background-color: #8c1919;
+    top: 0%;
+}
+
+
+#wrapper {
+  width: 500px;
+}
+
+table{
+    font-family: arial;
+    position: relative;
+    background: #000;
+    color: #fff;
+    opacity:0.8;
+    border-collapse: collapse;
+}
+
+
+tbody {
+  display: block;
+  height: 280px;
+  overflow: auto;
+}
+
+th, td{
+    text-align-last: center;
+    padding: 5px;
+}
+
+tr:nth-child(even){
+    background-color: #3b3b3b;
+}
+
+.logo {
+    line-height: 60px;
+    position: fixed;
+    float: left;
+    margin: 16px 46px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-shadow: 5px rgb(0, 0, 0);
+}
+
+.img{
+    width: 75px;
+    height: 75px;
+    border-radius: 25%;
+}
+
+section {
+    position: relative;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    top: -1%;
+    display: grid;
+    height: 70%;
+}
+
+#mainGuardarropa {
+    position: relative;
+    flex-grow: inherit;
+    align-items: center;
+    width: 100%;
+    top: -1%;
+    display: grid;
+    height: 70%;
+}
+
+article {
+    width: 100%;
+    height: 70%;
+    position: relative;
+    justify-items: center;
+    display: grid;
+}
+
+form {
+    width: 30%;
+    height: 100%;
+    justify-items: center;
+    position: relative;
+}
+
+.selectItems {
+    position: relative;
+    display: block;
+    height: 60%;
+}
+
+.inputItems {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+}
+
+.itemForm {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin: 4px;
+    text-align: center;
+}
+
+.itemForm span {
+    font-family: Montserrat-Black;
+    font-size: 27px;
+    line-height: 1.2;
+    color: #333333;
+    text-align: center;
+}
+
+.item {
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #333333;
+    display: block;
+    width: 100%;
+    background: #fff;
+    height: 50px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+
+}
+
+.focus-input {
+    display: block;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 0px 0px;
+    color: rgba(234, 8, 0, 0.6);
+}
+
+.item:focus+.focus-input {
+    -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
+    animation: anim-shadow 0.5s ease-in-out forwards;
+}
+
+@-webkit-keyframes anim-shadow {
+    to {
+        box-shadow: 0px 0px 80px 30px;
+        opacity: 0;
+    }
+}
+
+@keyframes anim-shadow {
+    to {
+        box-shadow: 0px 0px 80px 30px;
+        opacity: 0;
+    }
+}
+
+#buttom {
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #e0e0e0;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: #8c1919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    transition: all 0.4s;
+    position: relative;
+    z-index: 1;
+}
+
+
+#buttom:hover {
+    background-color: #cccccc;
+    color: black
+}
+
+.frioCalor{
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #e0e0e0;
+    padding: 0 75px;
+    border-radius: 25px;
+    background: #8c1919;
+    position: relative;
+
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0%;
+    height: 16%;
+    width: 100%;
+    background-color: rgba(125, 125, 127, 0.7);
+    display: inline-flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+
+footer .opButton {
+    height: 50%;
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 4px;
+}
+
+.opButton .option {
+    font-family: Montserrat-Black;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 25px;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    transition: all 0.4s;
+    position: relative;
+    z-index: 1;
+    background-color: #cccccc;
+}
+
+.opButton .option:hover {
+    background-color: #8c1919;
+    box-shadow: 10px 10px 0px 3px black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #cccccc;
+}
+
+@media(max-width: 975px) {
+    .opButton option {
+        width: 100%;
+        height: 90%;
+    }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #8c1919;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-family: verdana;
+  font-size: 10px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 50%;
+  left: 50%;
+  margin-left: -60px;
+  opacity:80%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 100%
+}

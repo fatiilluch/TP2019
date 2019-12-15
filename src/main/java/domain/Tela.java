@@ -1,0 +1,6 @@
+package domain;
+
+public enum  Tela
+{
+    TELA, ALGODON, CUERO, DENIM, SEDA, LANA, LINO, POLIESTER, FIBRA, PLASTICO, METAL, GOMA, CHAROL, LYCRA, NYLON, JEAN;
+}

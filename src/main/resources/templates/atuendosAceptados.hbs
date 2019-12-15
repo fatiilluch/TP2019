@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  -ms-transform: translate(-50%, -50%);
+}
+</style>
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="guardarropas/js/guardarropaEnlaces.js"></script>
+
+<head>
+    <meta charset="utf-8">
+    <title>Guardarropas | QueMePongo</title>
+    <link rel="stylesheet" href="guardarropas/css/estilosGuardarropa.css">
+    <link rel="icon" type="image/png" href="guardarropas/images/icons/favicon.ico">
+</head>
+
+<body>
+<nav>
+    <div class="logo">QueMePongo?</div>
+    <div id="notificaciones"></div>
+</nav>
+<section id="sugerenciasAceptadas">
+    <article>
+        <div class="selectItems">
+            <div class="itemForm"><span>Sugerencias Aceptadas: </span></div>
+            <div class="itemForm">
+                    <tbody>
+                        <table border = "1" align="center">
+                            <tr><th>N°</th><th colspan="2">Parte Superior</th><th>Parte Inferior</th><th>Calzado</th></tr>
+                            {{#each atuendosAceptados}}
+                                <tr align="center">
+                                    <td>{{@index}}</td>
+                                    <td>
+                                        <div class="tooltip">
+                                            <img class = "img" src={{parteSuperior1.imagenParaMostrar}} srcset={{parteSuperior1.tipoDePrenda.imagenPredeterminada}} style='background-color: {{parteSuperior1.colorPrincipal.colorIngles}}'/>
+                                            <span class="tooltiptext">{{parteSuperior1.tipoDePrenda.nombre}} de {{parteSuperior1.tipoTela}}</span>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="tooltip">
+                                            <img class = "img" src={{parteSuperior2.imagenParaMostrar}} srcset={{parteSuperior2.tipoDePrenda.imagenPredeterminada}} style='background-color: {{parteSuperior2.colorPrincipal.colorIngles}}'/>
+                                            <span class="tooltiptext">{{parteSuperior2.tipoDePrenda.nombre}} de {{parteSuperior2.tipoTela}}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tooltip">
+                                        <img class = "img" src={{parteInferior.imagenParaMostrar}} srcset={{parteInferior.tipoDePrenda.imagenPredeterminada}} style='background-color: {{parteInferior.colorPrincipal.colorIngles}}'/>
+                                            <span class="tooltiptext">{{parteInferior.tipoDePrenda.nombre}} de {{parteInferior.tipoTela}}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tooltip">
+                                            <img class = "img" src={{calzado.imagenParaMostrar}} srcset={{calzado.tipoDePrenda.imagenPredeterminada}} style='background-color: {{calzado.colorPrincipal.colorIngles}}'/>
+                                            <span class="tooltiptext">{{calzado.tipoDePrenda.nombre}} de {{calzado.tipoTela}}</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {{/each}}
+
+                        </table>
+                    </tbody>
+                <span class="focus-input"></span>
+            </div>
+
+        </div>
+    </article>
+</section>
+<footer>
+    <div class="opButton">
+        <div class="option"><a href="/sugerencias">Volver</a> </div>
+    </div>
+    <div class="opButton">
+        <div class="option"><a href="#" onclick="location.reload()">Ser Premium</a></div>
+    </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home | QueMePongo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="main/css/estilosMain.css">
+    <link rel="icon" type="image/png" href="main/images/icons/favicon.ico" />
+</head>
+
+<body>
+<script>
+		$(document).ready(function(){
+            var url_string = window.location.href
+            var url = new URL(url_string);
+            var aviso = url.searchParams.get("aviso");
+            if (aviso==1){
+                alert("No se pudo generar una sugerencia");
+            }
+            if (aviso==2){
+                alert("Hubo un error, perdone las molestias");
+            }
+
+		});
+
+	</script>
+    <nav>
+        <div class="logo">QueMePongo?</div>
+        <div id="notificaciones"></div>
+    </nav>
+    <section id="mainEvent">
+        <div class="items" id="guardarropa">
+            <div>Guardarropas</div>
+
+            <div class="options" method="POST" action="/guardarropa">
+                <a href="guardarropa"><img src="main/images/guardarropa.svg"></a>
+
+            </div>
+        </div>
+        <div class="items">
+            <div>Sugerencias</div>
+            <div class="options">
+                <a href="/sugerencias"><img src="main/images/flecha3.svg"></a>
+            </div>
+        </div>
+        <div class="items">
+            <div>Eventos</div>
+            <div class="options">
+                <a href="/eventos"><img src="main/images/flecha3.svg"></a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="opButton">
+            <div class="option"><a href="./login">Cerrar Sesion</a> </div>
+        </div>
+        <div class="opButton">
+            <div class="option"><a href="#">Ser Premium</a></div>
+        </div>
+    </footer>
+</body>
+</html>

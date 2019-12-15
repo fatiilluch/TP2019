@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Pedir Sugerencia | Que me Pongo </title>
+    <link rel="stylesheet" href="suggestions/css/estilossuggestions.css">
+    <link rel="stylesheet" href="guardarropas/css/estilosGuardarropa.css">
+    <script type="text/javascript" src="suggestions/js/agregarSugerencia.js"></script>
+    <link rel="icon" type="image/svg" href="events/images/icon.svg" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo">QueMePongo?</div>
+        <div id="notificaciones"></div>
+    </nav>
+
+        <section>
+            <article>
+                <tbody>
+                    <table border = "1" aling="center">
+                        <tr><td rowspan="2">Parte Superior</td>
+                            <td>{{sugerencia.primerAtuendo.parteSuperior1.tipoDePrenda.nombre}}</td><td>{{sugerencia.primerAtuendo.parteSuperior1.tipoTela}}</td>
+                            <td><img class = "img" src={{sugerencia.primerAtuendo.parteSuperior1.imagenParaMostrar}} srcset={{sugerencia.primerAtuendo.parteSuperior1.tipoDePrenda.imagenPredeterminada}} style='background-color: {{sugerencia.primerAtuendo.parteSuperior1.colorPrincipal.colorIngles}}'/></td>
+                            
+                        </tr>
+                        <tr>
+                             <td>{{sugerencia.primerAtuendo.parteSuperior2.tipoDePrenda.nombre}}</td><td>{{sugerencia.primerAtuendo.parteSuperior2.tipoTela}}</td>
+                             <td><img class = "img" src={{sugerencia.primerAtuendo.parteSuperior2.imagenParaMostrar}} srcset={{sugerencia.primerAtuendo.parteSuperior2.tipoDePrenda.imagenPredeterminada}} style='background-color: {{atuendoparteSuperior2.colorPrincipal.colorIngles}}'/></td>
+                             
+                        </tr>
+                        <tr><td>Parte Inferior</td>
+                              <td>{{sugerencia.primerAtuendo.parteInferior.tipoDePrenda.nombre}}</td><td>{{sugerencia.primerAtuendo.parteInferior.tipoTela}}</td>
+                              <td><img class = "img" src={{sugerencia.primerAtuendo.parteInferior.imagenParaMostrar}} srcset={{sugerencia.primerAtuendo.parteInferior.tipoDePrenda.imagenPredeterminada}} style='background-color: {{sugerencia.primerAtuendo.parteInferior.colorPrincipal.colorIngles}}'/></td>
+                               
+                        </tr>
+                        <tr><td>Calzado</td>
+                            <td>{{sugerencia.primerAtuendo.calzado.tipoDePrenda.nombre}}</td><td>{{sugerencia.primerAtuendo.calzado.tipoTela}}</td>
+                            <td><img class = "img" src={{sugerencia.primerAtuendo.calzado.imagenParaMostrar}} srcset={{sugerencia.primerAtuendo.calzado.tipoDePrenda.imagenPredeterminada}} style='background-color: {{sugerencia.primerAtuendo.calzado.colorPrincipal.colorIngles}}'/></td>
+                            
+                        </tr>
+                    </table>
+                </tbody>
+
+            </article>
+        <div class="button-container">
+        <form action="/modificarSensibilidadUsuario">
+
+            <div>
+                         <select class="item" name='sensibilidad' id="idSensibilidad"> 
+                            <option  value="ok">Seleccione una opcion: </option>
+                            <option  value="ok">Estuvo genial</option>
+                            <option value="frioSup">Tuve frio Arriba</option>
+                            <option value="frioInf">Tuve frio Abajo</option>
+                            <option value="calorSup">Tuve Calor Arriba</option>
+                            <option value="calorInf">Tuve Calor Abajo</option>
+                        </select>
+           </div>
+            <div>
+                <button type="submit" id="btnAceptar" class="frioCalor" onclick="sensibilidadMoficidada(id)">Aceptar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+    </section>
+
+    <footer>
+        <div class="opButton">
+            <div class="option"><a href="/sugerencias">Volver</a> </div>
+        </div>
+        <div class="opButton">
+            <div class="option"><a href="#" onclick="location.reload()">Ser Premium</a></div>
+        </div>
+    </footer>
+</body>
+
+</html>
